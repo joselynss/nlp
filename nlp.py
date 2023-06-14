@@ -4,6 +4,17 @@ import pickle
 import streamlit as st
 import datetime
 
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.pipeline import make_pipeline
+from sklearn.naive_bayes import MultinomialNB
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, f1_score, precision_score, recall_score
+from wordcloud import WordCloud
+
+
 def greeting():
     current_time = datetime.datetime.now().time()
     morning_start = datetime.time(6)
